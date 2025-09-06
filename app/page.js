@@ -97,7 +97,7 @@ export default function HomePage() {
           Why VendorVerse?
         </h2>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <Swiper
             modules={[Autoplay, Pagination]}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -107,56 +107,83 @@ export default function HomePage() {
             slidesPerView={1}
             breakpoints={{
               640: { slidesPerView: 1 },
-              768: { slidesPerView: 1 },
-              1024: { slidesPerView: 1 },
+              768: { slidesPerView: 2 }, // show 2 cards on tablets
+              1024: { slidesPerView: 2 }, // show 2 cards on desktop
             }}
           >
             {[
               {
                 title: "Secure Payments",
-                text: "Encrypted and reliable transactions ensure buyers and sellers feel safe.",
+                text: "Encrypted and reliable transactions ensure buyers and sellers feel safe. Enjoy peace of mind knowing your sensitive data is always protected.",
                 img: "/placeholder.webp"
               },
               {
                 title: "Easy Onboarding",
-                text: "Sign up and start selling within minutes effortlessly.",
+                text: "Sign up and start selling within minutes effortlessly. Our simple process helps vendors focus on growing their business instead of complex setups.",
                 img: "/placeholder.webp"
               },
               {
                 title: "Real-Time Chat",
-                text: "Instant messaging with buyers or sellers — smooth communication.",
+                text: "Instant messaging with buyers or sellers makes communication smooth and transparent. Build trust with real-time conversations before making deals.",
                 img: "/placeholder.webp"
               },
-            ].map((feature, idx) => (
-              <SwiperSlide key={idx}>
-                <div
-                  data-aos="zoom-in"
-                  data-aos-delay={idx * 100}
-                  className="flex flex-col items-center text-center p-6 sm:p-8 rounded-3xl border border-gray-300 bg-white shadow-md w-full"
-                >
-                  <div className="mb-6 sm:mb-8">
-                    <Image
-                      src={feature.img}
-                      alt={feature.title}
-                      width={150}
-                      height={150}
-                      className="object-contain drop-shadow-md w-24 sm:w-32"
-                    />
+              {
+                title: "Local Discovery",
+                text: "Find nearby vendors and products in your area. Support your local economy while enjoying convenient shopping close to home.",
+                img: "/placeholder.webp"
+              },
+              {
+                title: "Fast Delivery",
+                text: "Get your products delivered quickly and reliably. Vendors can manage local deliveries easily, ensuring customers receive orders on time.",
+                img: "/placeholder.webp"
+              },
+              {
+                title: "Inventory Management",
+                text: "Sellers can track stock, update products, and manage listings without hassle. Stay organized and never miss a sale opportunity.",
+                img: "/placeholder.webp"
+              }
+            ]
+              .map((feature, idx) => (
+                <SwiperSlide key={idx}>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay={idx * 150}
+                    className="
+              flex flex-col items-center text-center 
+              p-6 sm:p-8 
+              rounded-3xl border-2 border-blue-600 bg-white shadow-lg
+              w-64 sm:w-72 md:w-80 
+              min-h-[380px] sm:min-h-[420px] md:min-h-[460px]
+              mx-auto
+            "
+                  >
+                    {/* Image */}
+                    <div className="mb-6 sm:mb-8">
+                      <Image
+                        src={feature.img}
+                        alt={feature.title}
+                        width={150}
+                        height={150}
+                        className="object-contain drop-shadow-md w-24 sm:w-28 md:w-32"
+                      />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-gray-900">
+                      {feature.title}
+                    </h3>
+
+                    {/* Text */}
+                    <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs">
+                      {feature.text}
+                    </p>
                   </div>
-
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-gray-900">
-                    {feature.title}
-                  </h3>
-
-                  <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
-                    {feature.text}
-                  </p>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </section>
+
 
       {/* How It Works Section */}
       <section
@@ -176,26 +203,48 @@ export default function HomePage() {
             slidesPerView={1}
             breakpoints={{
               640: { slidesPerView: 1 },
-              768: { slidesPerView: 1 },
-              1024: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 2 },
             }}
           >
             {[
-              { step: "1. Explore", desc: "Browse products from local vendors easily." },
-              { step: "2. Order", desc: "Add items to the cart and checkout securely." },
-              { step: "3. Chat", desc: "Talk directly with sellers in real-time." },
-              { step: "4. Deliver", desc: "Enjoy fast, safe deliveries to your doorstep." },
+              {
+                step: "1. Explore",
+                desc: "Browse products from local vendors easily. Discover unique items that support your community while saving money. Navigate categories effortlessly and find exactly what you need within seconds."
+              },
+              {
+                step: "2. Order",
+                desc: "Add items to the cart and checkout securely. Our platform ensures safe transactions and multiple payment options. Track your order history and enjoy hassle-free reordering of your favorite products."
+              },
+              {
+                step: "3. Chat",
+                desc: "Talk directly with sellers in real-time. Ask questions, negotiate, or request customizations for your orders. Stay connected and build trust with vendors before making a purchase."
+              },
+              {
+                step: "4. Deliver",
+                desc: "Enjoy fast, safe deliveries to your doorstep. Our reliable delivery partners ensure your package arrives on time and in perfect condition, giving you peace of mind with every purchase."
+              },
             ].map((item, idx) => (
               <SwiperSlide key={idx}>
                 <div
                   data-aos="fade-up"
                   data-aos-delay={idx * 150}
-                  className="flex flex-col items-center text-center p-6 sm:p-8 rounded-3xl border border-gray-300 bg-white shadow-md w-full"
+                  className="
+              flex flex-col items-center text-center 
+              p-6 sm:p-8 
+              rounded-3xl border-2 border-blue-600 bg-white shadow-xl
+              w-80 sm:w-72 md:w-90 
+              min-h-[360px] sm:min-h-[400px] md:min-h-[440px]
+              mx-auto
+            "
                 >
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-indigo-600">
+                  {/* Step Text - Larger */}
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 text-indigo-600">
                     {item.step}
                   </h3>
-                  <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">
+
+                  {/* Description Text - Smaller */}
+                  <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-xs">
                     {item.desc}
                   </p>
                 </div>
