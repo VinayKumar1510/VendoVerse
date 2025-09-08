@@ -21,17 +21,19 @@ export default function AddProducts() {
   };
 
   // Toast helpers
-  const showSuccessToast = (message) => toast.custom(t => (
-    <div className={`bg-green-600 text-white px-6 py-4 rounded-lg shadow-md flex items-center space-x-3 transition-all ${t.visible ? "opacity-100" : "opacity-0"}`}>
-      <CheckCircle className="w-6 h-6 text-white" /> <span>{message}</span>
-    </div>
-  ));
+  const showSuccessToast = (message) =>
+    toast.custom((t) => (
+      <div className={`bg-green-600 text-white px-6 py-4 rounded-lg shadow-md flex items-center space-x-3 transition-all ${t.visible ? "opacity-100" : "opacity-0"}`}>
+        <CheckCircle className="w-6 h-6 text-white" /> <span>{message}</span>
+      </div>
+    ));
 
-  const showErrorToast = (message) => toast.custom(t => (
-    <div className={`bg-red-600 text-white px-6 py-4 rounded-lg shadow-md flex items-center space-x-3 transition-all ${t.visible ? "opacity-100" : "opacity-0"}`}>
-      <XCircle className="w-6 h-6 text-white" /> <span>{message}</span>
-    </div>
-  ));
+  const showErrorToast = (message) =>
+    toast.custom((t) => (
+      <div className={`bg-red-600 text-white px-6 py-4 rounded-lg shadow-md flex items-center space-x-3 transition-all ${t.visible ? "opacity-100" : "opacity-0"}`}>
+        <XCircle className="w-6 h-6 text-white" /> <span>{message}</span>
+      </div>
+    ));
 
   // Handle form submit
   const handleSubmit = async (e) => {
@@ -111,17 +113,24 @@ export default function AddProducts() {
 
         {/* Image Upload */}
         <label className="block mb-2 text-gray-700 font-medium">Product Image</label>
-        <input
-          type="file"
-          name="image"
-          accept="image/*"
-          onChange={handleFileChange}
-          className="mb-6 w-full text-gray-700"
-          required
-        />
+        <div
+          className="relative w-full h-48 border-2 border-dashed rounded-xl flex items-center justify-center cursor-pointer hover:border-indigo-500 hover:bg-indigo-50 transition duration-200"
+        >
+          <span className="text-gray-500 text-center">
+            {image ? image.name : "Click to upload image"}
+          </span>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            onChange={handleFileChange}
+            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            required
+          />
+        </div>
 
         {/* Submit Button */}
-        <AddProductButton type="submit" disabled={loading} />
+        <AddProductButton type="submit" disabled={loading} className="mt-6" />
       </form>
     </div>
   );
