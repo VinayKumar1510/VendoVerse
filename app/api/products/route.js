@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import dbconnect from "@/lib/dbConnect";
 import Product from "@/models/Product";
-import fs from "fs/promises";
-import path from "path";
 
 // GET all products
 export async function GET() {
@@ -19,7 +17,7 @@ export async function GET() {
   }
 }
 
-// POST new product
+// POST new product with Base64 image
 export async function POST(req) {
   try {
     await dbconnect();
@@ -37,23 +35,17 @@ export async function POST(req) {
       );
     }
 
-    // Save the uploaded file to public/uploads
+    // Convert file to Base64
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+    const base64Image = `data:${file.type};base64,${buffer.toString("base64")}`;
 
-    const uploadDir = path.join(process.cwd(), "public/uploads");
-    await fs.mkdir(uploadDir, { recursive: true });
-
-    const filePath = path.join(uploadDir, file.name);
-    await fs.writeFile(filePath, buffer);
-
-    const imagePath = `/uploads/${file.name}`;
-
+    // Save product in MongoDB
     const newProduct = await Product.create({
       name,
       price,
       category,
-      image: imagePath,
+      image: base64Image,
     });
 
     return NextResponse.json({ success: true, product: newProduct }, { status: 201 });
