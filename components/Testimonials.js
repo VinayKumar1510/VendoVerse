@@ -45,7 +45,7 @@ export default function Testimonials() {
             <SwiperSlide key={idx}>
               <div
                 data-aos="fade-up"
-                className="group relative bg-white/90 border border-gray-700 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 transition-all"
+                className="group relative bg-white/90 border border-blue-600 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 transition-all"
               >
                 <div
                   aria-hidden="true"
@@ -62,4 +62,5 @@ export default function Testimonials() {
 
   );
 }
+
 
