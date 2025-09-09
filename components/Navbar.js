@@ -13,10 +13,12 @@ export default function Navbar() {
 
         {/* Left: Logo */}
         <div className="text-left">
-          <Link href="/" className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-violet-600 to-sky-600">
-            VendorVerse
+          <Link href="/" className="text-3xl font-bold">
+            <span className="text-gray-700">Vendo</span>
+            <span className="text-blue-600">Verse</span>
           </Link>
         </div>
+
 
         {/* Right: Nav Links and Cart (hidden on mobile) */}
         <div className="hidden md:flex items-center space-x-4 text-gray-900 font-semibold text-xl">
@@ -29,7 +31,7 @@ export default function Navbar() {
           <Link href="/cart" className="relative group">
             <div className="flex items-center space-x-1 px-3 py-2 rounded-3xl border border-white/10 hover:border-white/30 hover:bg-white/10 transition">
               <ShoppingCart size={20} className="text-gray-800 group-hover:text-gray-700" />
-              <span className="text-sm">Cart</span>
+              <span className="text-xl">Cart</span>
             </div>
           </Link>
         </div>
@@ -44,7 +46,7 @@ export default function Navbar() {
           {/* Hamburger Menu */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-900 focus:outline-none"
+            className="text-gray-900 focus:outline-none cursor-pointer"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -53,9 +55,8 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden overflow-hidden transform transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
-        } bg-white backdrop-blur-xl px-4 pb-4 pt-2 shadow-lg border-t border-black/90 text-gray-900 font-medium rounded-b-xl`}
+        className={`md:hidden overflow-hidden transform transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
+          } bg-white backdrop-blur-xl px-4 pb-4 pt-2 shadow-lg border-t border-black/90 text-gray-900 font-medium rounded-b-xl`}
       >
         <Link href="/" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded hover:bg-blue/10">Home</Link>
         <Link href="/shop" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded hover:bg-blue/10">Shop</Link>
