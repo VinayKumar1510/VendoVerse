@@ -119,7 +119,7 @@ export default function ContactForm() {
             <button
               type="submit"
               data-aos="zoom-in"
-              className="w-full py-3 sm:py-4 px-6 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm sm:text-base md:text-lg hover:scale-[1.02] hover:shadow-lg transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+              className="w-full py-3 sm:py-4 px-6 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold text-sm sm:text-base md:text-lg hover:scale-[1.02] hover:shadow-lg transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 cursor-pointer"
             >
               ✉️ Send Message
             </button>
