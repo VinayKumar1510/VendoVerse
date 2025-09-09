@@ -24,19 +24,9 @@ export default function HomePage() {
     <main className="bg-white text-gray-900">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-24 md:py-28 pt-32 md:pt-36"
+        className="relative overflow-hidden flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 py-24 md:py-28 pt-34 md:pt-36 mt-8"
         data-aos="fade-up"
       >
-        {/* Background glow */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -left-24 h-56 w-56 md:h-72 md:w-72 rounded-full blur-3xl bg-indigo-100/40"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 -right-24 h-56 w-56 md:h-72 md:w-72 rounded-full blur-3xl bg-violet-100/40"
-        />
-
         {/* LEFT CONTENT */}
         <div className="flex-1 text-center md:text-left z-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 leading-tight">
@@ -53,13 +43,13 @@ export default function HomePage() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
             <Link href="/shop">
-              <button className="relative cursor-pointer group bg-gradient-to-r from-indigo-500 to-violet-600 text-white px-6 sm:px-8 py-3 rounded-full font-semibold shadow-lg shadow-indigo-500/20 text-sm sm:text-base md:text-lg w-full sm:w-auto">
+              <button className="relative cursor-pointer group bg-gradient-to-r from-indigo-500 to-violet-600 text-white px-6 sm:px-8 py-3 rounded-full font-semibold shadow-lg shadow-indigo-500/20 text-sm sm:text-base md:text-lg w-full sm:w-auto hover:shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] hover:transition-all delay-75 ease-out hover:scale-105">
                 🛒 Start Shopping
               </button>
             </Link>
 
             <Link href="/seller">
-              <button className="relative cursor-pointer group border border-gray-300 text-gray-800 bg-white px-6 sm:px-8 py-3 rounded-full font-semibold shadow-md text-sm sm:text-base md:text-lg w-full sm:w-auto">
+              <button className="relative cursor-pointer group border border-blue-400 text-gray-800 bg-white px-6 sm:px-8 py-3 rounded-full font-semibold shadow-md text-sm sm:text-base md:text-lg w-full sm:w-auto hover:shadow-[0px_0px_20px_10px_#cbd5e0] hover:transition-all delay-75 ease-out hover:scale-105">
                 🚀 Become a Seller
               </button>
             </Link>
@@ -72,30 +62,15 @@ export default function HomePage() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div
-          className="flex-1 mt-12 md:mt-0 md:ml-12 flex justify-center z-10"
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          <Image
-            src="/homeimage.png"
-            alt="Local Vendors Marketplace"
-            width={400}
-            height={400}
-            className="drop-shadow-xl rounded-2xl w-60 sm:w-80 md:w-full max-w-md lg:max-w-lg"
-            priority
-          />
+        <div className="flex-1 mt-12 md:mt-0 md:ml-12 flex justify-center z-10" data-aos="zoom-in" data-aos-delay="200">
+          <Image src="/homeimage.png" alt="Local Vendors Marketplace" width={400} height={400} className="drop-shadow-xl rounded-2xl w-60 sm:w-80 md:w-full max-w-md lg:max-w-lg" priority/>
         </div>
       </section>
 
       {/* Features Section */}
       <section
-        className="py-20 sm:py-28 px-4 sm:px-6 bg-[#fffffa] text-gray-800 border-t border-gray-300"
-        data-aos="fade-up"
-      >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center mb-12 sm:mb-16 text-gray-900 underline decoration-blue-500 decoration-4 underline-offset-4">
-          Why VendorVerse?
-        </h2>
+        className="py-20 sm:py-28 px-4 sm:px-6 bg-[#fffffa] text-gray-800 border-t border-gray-300" data-aos="fade-up">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center mb-12 sm:mb-16 text-gray-900 underline decoration-blue-500 decoration-4 underline-offset-4">Why VendorVerse?</h2>
 
         <div className="max-w-3xl mx-auto">
           <Swiper
@@ -124,7 +99,7 @@ export default function HomePage() {
               },
               {
                 title: "Real-Time Chat",
-                text: "Instant messaging with buyers or sellers makes communication smooth and transparent. Build trust with real-time conversations before making deals.",
+                text: "Instant messaging with buyers or sellers makes communication smooth and transparent. Build trust with real-time conversations",
                 img: "/placeholder.webp"
               },
               {
@@ -139,7 +114,7 @@ export default function HomePage() {
               },
               {
                 title: "Inventory Management",
-                text: "Sellers can track stock, update products, and manage listings without hassle. Stay organized and never miss a sale opportunity.",
+                text: "Sellers can track stock, update products, and manage listings without hassle. Never miss a sale opportunity.",
                 img: "/placeholder.webp"
               }
             ]
@@ -148,15 +123,7 @@ export default function HomePage() {
                   <div
                     data-aos="zoom-in"
                     data-aos-delay={idx * 150}
-                    className="
-              flex flex-col items-center text-center 
-              p-6 sm:p-8 
-              rounded-3xl border-2 border-blue-600 bg-white shadow-lg
-              w-64 sm:w-72 md:w-80 
-              min-h-[380px] sm:min-h-[420px] md:min-h-[460px]
-              mx-auto
-            "
-                  >
+                    className="flex flex-col items-center text-center p-6 sm:p-8 rounded-3xl border-2 border-blue-600 bg-white shadow-lgw-64 sm:w-72 md:w-80 min-h-[380px] sm:min-h-[420px] md:min-h-[460px]mx-auto">
                     {/* Image */}
                     <div className="mb-6 sm:mb-8">
                       <Image
@@ -164,8 +131,7 @@ export default function HomePage() {
                         alt={feature.title}
                         width={150}
                         height={150}
-                        className="object-contain drop-shadow-md w-24 sm:w-28 md:w-32"
-                      />
+                        className="object-contain drop-shadow-md w-24 sm:w-28 md:w-32"/>
                     </div>
 
                     {/* Title */}
@@ -186,13 +152,8 @@ export default function HomePage() {
 
 
       {/* How It Works Section */}
-      <section
-        className="py-16 sm:py-20 px-4 sm:px-6 bg-white text-gray-700 border-t border-black/10"
-        data-aos="fade-up"
-      >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-          How It Works
-        </h2>
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white text-gray-700 border-t border-black/10" data-aos="fade-up">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center mb-12 sm:mb-16 text-gray-900 underline decoration-blue-500 decoration-4 underline-offset-4">How it Works</h2>
         <div className="max-w-4xl mx-auto">
           <Swiper
             modules={[Autoplay, Pagination]}
@@ -226,17 +187,7 @@ export default function HomePage() {
               },
             ].map((item, idx) => (
               <SwiperSlide key={idx}>
-                <div
-                  data-aos="fade-up"
-                  data-aos-delay={idx * 150}
-                  className="
-              flex flex-col items-center text-center 
-              p-6 sm:p-8 
-              rounded-3xl border-2 border-blue-600 bg-white shadow-xl
-              w-80 sm:w-72 md:w-90 
-              min-h-[360px] sm:min-h-[400px] md:min-h-[440px]
-              mx-auto
-            "
+                <div data-aos="fade-up" data-aos-delay={idx * 150} className="flex flex-col items-center text-center p-6 sm:p-8 rounded-3xl border-2 border-blue-600 bg-white shadow-xl w-80 sm:w-72 md:w-90 min-h-[360px] sm:min-h-[400px] md:min-h-[440px] mx-auto"
                 >
                   {/* Step Text - Larger */}
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-3 text-indigo-600">
