@@ -17,7 +17,7 @@ export function StartShoppingButton() {
 export function BecomeSellerButton() {
   return (
     <Link href="/seller">
-      <button className="relative cursor-pointer group border border-indigo-600 text-indigo-600 bg-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-600 hover:text-white shadow-md transition transform hover:scale-105">
+      <button className="relative cursor-pointer group border border-indigo-600 text-indigo-600 bg-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-600 hover:text-white shadow-md transition transform hover:scale-105 ">
         <span className="relative z-10">🚀 Become a Seller</span>
         <span className="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-10 transition rounded-full"></span>
       </button>
@@ -82,7 +82,7 @@ export function AddProductButton({ type = "submit", onClick }) {
     <button
       type={type}
       onClick={onClick}
-      className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 rounded-lg font-semibold shadow-md hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+      className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 rounded-lg font-semibold shadow-md hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
     >
       🚀 Add Product
     </button>
